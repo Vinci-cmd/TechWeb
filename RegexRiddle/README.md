@@ -1,6 +1,6 @@
 # RegexRiddle 🧩
 
-Un'applicazione web interattiva per imparare, creare e sfidarsi a colpi di Espressioni Regolari (Regex). Ispirata dal Neobrutalismo e costruita per essere rapida, reattiva e sicura.
+Un'applicazione web interattiva per imparare, creare e sfidarsi a colpi di Espressioni Regolari (Regex). Costruita per essere rapida, reattiva e sicura.
 
 ## Stack Tecnologico 🚀
 
