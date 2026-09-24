@@ -1,0 +1,21 @@
+// _mixins.scss
+@use 'variables' as *;
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin card-style {
+  background: white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
