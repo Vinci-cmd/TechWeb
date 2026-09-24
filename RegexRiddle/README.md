@@ -15,7 +15,7 @@ Un'applicazione web interattiva per imparare, creare e sfidarsi a colpi di Espre
 ### Front-end
 - **React** (Libreria UI) + **TypeScript**
 - **Vite** (Build tool e dev server)
-- **SASS/SCSS** (Stilizzazione Neobrutalista e Responsive Design)
+- **SASS/SCSS** (Stilizzazione e Responsive Design)
 - **React Router** (Routing Single Page Application)
 - **Lucide React** (Icone)
 
@@ -58,7 +58,34 @@ Tutti gli account pre-generati dal database seed (utili per provare le sfide e l
 
 ---
 
-## 4. Avvio in Locale (Modalità Sviluppo) 💻
+## 4. Avvio con Docker Compose (Raccomandato) 🐳
+
+Il metodo più veloce e sicuro per lanciare l'intera applicazione in un ambiente isolato (Database, Backend e Frontend inclusi).
+
+Assicurarsi che Docker sia attivo. Dalla root del progetto, lanciare:
+```bash
+docker-compose up --build -d
+```
+Al primo avvio, il backend eseguirà in automatico le migrazioni e popolerà i dati dimostrativi (`start.sh`).
+
+L'applicazione completa sarà navigabile su:
+```text
+http://localhost:80
+```
+
+Per visualizzare lo stato dei container:
+```bash
+docker-compose ps
+```
+
+Per spegnere e pulire lo stack:
+```bash
+docker-compose down
+```
+
+---
+
+## 5. Avvio in Locale 💻
 
 Se si preferisce avviare i servizi manualmente senza Docker:
 
@@ -95,38 +122,11 @@ L'app React sarà visibile su `http://localhost:5173`
 
 ---
 
-## 5. Avvio con Docker Compose (Raccomandato) 🐳
-
-Il metodo più veloce e sicuro per lanciare l'intera applicazione in un ambiente isolato (Database, Backend e Frontend inclusi).
-
-Assicurarsi che il demone di Docker sia attivo. Dalla root del progetto, lanciare:
-```bash
-docker-compose up --build -d
-```
-Al primo avvio, il backend eseguirà in automatico le migrazioni e popolerà i dati dimostrativi (`start.sh`).
-
-L'applicazione completa sarà navigabile su:
-```text
-http://localhost:80
-```
-
-Per visualizzare lo stato dei container:
-```bash
-docker-compose ps
-```
-
-Per spegnere e pulire lo stack:
-```bash
-docker-compose down
-```
-
----
-
 ## 6. Testing E2E (Playwright) 🧪
 
 Il progetto include una suite completa di **10 test End-to-End** che validano l'interfaccia, i form e il routing sia in ambiente Desktop che Mobile.
 
-Per avviarli, assicurarsi che il backend e il frontend siano in esecuzione su localhost (Modalità Sviluppo), quindi aprire un terminale in `e2e/`:
+Per avviarli, assicurarsi che il backend e il frontend siano in esecuzione su localhost , quindi aprire un terminale in `e2e/`:
 
 ```bash
 cd e2e
